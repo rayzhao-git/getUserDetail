@@ -1,0 +1,7 @@
+<template>
+    <p>You have been invited to Shine A Light</p>
+    <lightning-input label="Password" oncommit={updatePassword} type="password" required></lightning-input>
+	<lightning-input label="Confirm Password" oncommit={updateConfirm} type="password" required></lightning-input>
+    <lightning-button variant="brand" label="Confirm" onclick={run}></lightning-button>
+    <p>{message}</p>
+</template>

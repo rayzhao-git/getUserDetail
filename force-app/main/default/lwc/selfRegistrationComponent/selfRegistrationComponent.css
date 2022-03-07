@@ -1,0 +1,41 @@
+.selfRegisterCard{
+	background: #027794;
+	/*opacity: 0.8;*/
+}
+.selfRegisterCardTitle{
+	font-family: Playfair Display;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 36px;
+	
+	/* or 100% */
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: -0.015em;
+	color: #FFFFFF;
+}
+.selfRegisterMessage{
+	font-size: 14px;
+	display: flex;
+	color: #FFFFFF;
+}
+.yellowButton {
+	width: 235.02px;
+	height: 54.47px;	
+	background: #EEDB2D !important;
+	border-radius: 8px;
+	border: 0px;
+
+	text-decoration: none;
+	text-align: center !important;
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	align-items: center;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #05546D;
+}

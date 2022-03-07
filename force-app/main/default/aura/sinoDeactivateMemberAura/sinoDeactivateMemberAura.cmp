@@ -1,0 +1,37 @@
+<aura:component implements="force:hasRecordId, force:lightningQuickActionWithoutHeader, forceCommunity:availableForAllPageTypes" controller="sinoDeactivateMemberController" access="global">
+    
+    <!-- handlers-->
+    <aura:attribute name="confirmationMessage1" type="String" required="false" default=""/>
+    <aura:attribute name="confirmationMessage2" type="String" required="false" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card title="Deactivate Team Member">
+        <hr/>
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-6">
+                    <span></span>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <img src="{!$Resource.VectorUserSettings}" alt="Block User"></img>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_3-of-6">
+                    <span>
+                        <p>{!v.confirmationMessage1}<br/><br/>{!v.confirmationMessage2}</p>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <span></span>
+                </div>
+            </div>
+            <br/>
+        </div>
+    </lightning:card>
+    <hr/>
+    <div class="slds-float_right">
+        <lightning:button variant="neutral" label="No" onclick="{! c.noCancel }" />      
+        <lightning:button variant="brand" label="Yes" onclick="{! c.yesProceed }" />
+    </div>
+</aura:component>

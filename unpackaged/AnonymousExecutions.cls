@@ -1,0 +1,2 @@
+Account a = new Account([SELECT Id, Name FROM ACCOUNT WHERE Name = 'Ray Seventh Volunteer Account'].(0));
+system.debug(logginglevel.INFO, 'Approval Request Id: ' + [SELECT Id FROM ProcessInstanceWorkItem WHERE ProcessInstanceId in (SELECT Id FROM ProcessInstance WHERE TargetObjectId='0017j00000cp7FQAAY')]);

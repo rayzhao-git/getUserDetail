@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Your Team">
+        <lightning-button label="Edit" slot="actions" onclick={openModal}></lightning-button>
+        <div class="slds-m-around_medium">
+            <!--p>Username: {email}</p-->
+            <!--p>User Team Id: {userteamid}</p-->
+        </div>
+        <lightning-record-edit-form record-id={userteamid} object-api-name="Account">
+            <lightning-messages></lightning-messages>
+            <div class="team-grid-container">
+                <div class="team-name-label"><label for="TeamName" class="slds-form-element__label">Team Name</label></div>
+                <div class="team-name-value"><lightning-output-field id="TeamName" field-name="Name" disabled="true" variant="label-hidden"></lightning-output-field></div>
+                <div class="team-desc-label"><label for="TeamDescription" class="slds-form-element__label">Team Description</label></div>
+                <div class="team-desc-value"><lightning-output-field id="TeamDescription" field-name="Description" disabled="true" variant="label-hidden"></lightning-output-field></div>
+                <div class="team-stat-label"><label for="TeamStatus" class="slds-form-element__label">Team Status</label></div>
+                <div class="team-stat-value"><lightning-output-field id="TeamStatus" field-name="Team_Status__c" disabled="true" variant="label-hidden"></lightning-output-field></div>
+                <div class="team-appd-label"><label for="TeamApprovedDate" class="slds-form-element__label">Team Approved Date</label></div>
+                <div class="team-appd-value"><lightning-output-field id="TeamApprovedDate" field-name="Team_Approved_Date__c" disabled="true" variant="label-hidden"></lightning-output-field></div>
+            </div>
+        </lightning-record-edit-form>
+        <!--p>This is a test</p-->
+    </lightning-card>
+
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Edit Team</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-record-edit-form object-api-name="Account" record-id={userteamid} layout-type="Full" columns="1" mode="edit">
+                        <lightning-input-field field-name="Name"></lightning-input-field>
+                        <lightning-input-field field-name="Description"></lightning-input-field>
+                        <lightning-button variant="brand" type="submit" label="Save" onclick={closeModal}></lightning-button>
+                    </lightning-record-edit-form>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

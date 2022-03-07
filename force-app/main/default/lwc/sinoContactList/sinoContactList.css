@@ -1,0 +1,36 @@
+.striped tbody tr:nth-of-type(2n) > td, .striped tbody tr:nth-of-type(2n) > th {
+    background-color: rgba(238, 219, 45, 0.19);
+}
+
+.striped tbody tr > td, .striped tbody tr > th {
+    background-color: rgba(5, 84, 103, 0.05);
+}
+
+.header {
+    background-color: transparent !important;
+}
+.header > th > p {
+    margin-right: var(--lwc-spacingXxxSmall);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(238, 219, 45, 0.19);
+    padding-left: var(--lwc-spacingSmall);
+    padding-top: var(--lwc-spacingXxSmall);
+    padding-bottom: var(--lwc-spacingXxSmall);
+}
+.header > th {
+    padding-right: 0px;
+}
+.last-header {
+    padding-right: var(--lwc-spacingSmall) !important;
+}
+.first-header > p {
+    background-color: #027794 !important;
+    color: white;
+}
+
+.data-row > td > * {
+    margin-left: var(--lwc-spacingSmall);
+}
+.data-row > th > * {
+    margin-left: var(--lwc-spacingSmall);
+}

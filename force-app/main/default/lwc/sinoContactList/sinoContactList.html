@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Your Members">
+        <div slot="actions">
+            <lightning-button variant="brand" onclick={viewAll} label="View All"></lightning-button>
+        </div>
+        <table class="slds-table striped .slds-table_cell-buffer">
+            <tr class="header">
+                <th scope="col" class="first-header"><p>NAME</p></th>
+                <th scope="col"><p>Email</p></th>
+                <th scope="col"><p>Phone</p></th>
+                <th scope="col"><p>WeChat ID</p></th>
+                <th scope="col" class="last-header slds-truncate"><p>Status</p></th>
+            </tr>
+            <template for:each={data} for:item="entry">
+                <tr key={entry.Id} class="data-row">
+                    <th scope="row" class="first-item"><a href={entry.EntryLink}>{entry.Name}</a></th>
+                    <td><lightning-formatted-email value={entry.Email}></lightning-formatted-email></td>
+                    <td><lightning-formatted-phone value={entry.Phone}></lightning-formatted-phone></td>
+                    <td><p>{entry.WeChat_ID__c}</p></td>
+                    <td><p>{entry.Member_Status__c}</p></td>
+                </tr>
+            </template>
+        </table>
+    </lightning-card>
+</template>

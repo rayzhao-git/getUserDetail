@@ -1,0 +1,17 @@
+.sinoActionQuickLinkText{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 1px;
+    color: #027794;
+}
+
+.hover-mouse {
+    cursor: pointer;
+}
+
+.sino-center-button {
+    text-align: center !important;
+}

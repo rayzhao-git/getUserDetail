@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Your Recent Time Entries">
+        <div slot="actions">
+            <lightning-button variant="brand" onclick={viewAll} label="View All"></lightning-button>
+        </div>
+        <table class="slds-table striped .slds-table_cell-buffer">
+            <tr class="header">
+                <th scope="col" class="first-header"><p>NAME</p></th>
+                <th scope="col"><p>Hours Worked</p></th>
+                <th scope="col"><p>Project</p></th>
+                <th scope="col"><p>Start Date</p></th>
+                <th scope="col" class="last-header"><p>End Date</p></th>
+            </tr>
+            <template for:each={data} for:item="entry">
+                <tr key={entry.Id} class="data-row">
+                    <th scope="row" class="first-item"><a href={entry.EntryLink}>{entry.Name}</a></th>
+                    <td><p>{entry.Hours_Worked__c}</p></td>
+                    <td><a href={entry.ProjectLink}>{entry.Project__r.Name}</a></td>
+                    <td><lightning-formatted-date-time value={entry.Start_Date__c}></lightning-formatted-date-time></td>
+                    <td><lightning-formatted-date-time value={entry.End_Date__c}></lightning-formatted-date-time></td>
+                </tr>
+            </template>
+        </table>
+    </lightning-card>
+</template>

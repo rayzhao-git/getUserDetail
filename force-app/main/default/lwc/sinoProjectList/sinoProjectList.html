@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Your Projects">
+        <div slot="actions">
+            <lightning-button variant="brand" onclick={viewAll} label="View All"></lightning-button>
+        </div>
+        <table class="slds-table striped .slds-table_cell-buffer">
+            <tr class="header">
+                <th scope="col" class="first-header"><p>NAME</p></th>
+                <th scope="col"><p>Status</p></th>
+                <th scope="col" class="last-header"><p>Approved Date</p></th>
+            </tr>
+            <template for:each={data} for:item="entry">
+                <tr key={entry.Id} class="data-row">
+                    <th scope="row" class="first-item"><a href={entry.EntryLink}>{entry.Name}</a></th>
+                    <td><p>{entry.Status__c}</p></td>
+                    <td><lightning-formatted-date-time value={entry.Project_Approved_Date__c}></lightning-formatted-date-time></td>
+                </tr>
+            </template>
+        </table>
+    </lightning-card>
+</template>

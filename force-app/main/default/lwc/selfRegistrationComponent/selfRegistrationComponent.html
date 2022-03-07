@@ -1,0 +1,216 @@
+<template>
+	<template if:true={show}>
+		<div class="selfRegisterCard">
+			<br/>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+				<div class="slds-col slds-size_10-of-12">
+					<span>
+						<h1 class="selfRegisterCardTitle">Register your team</h1>
+					</span>
+				</div>
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+			</div>
+			<br/>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+				<div class="slds-col slds-size_10-of-12">
+					<span>
+						<div class="slds-grid slds-gutters_x-small">
+							<div class="slds-col">
+								<span>			
+									<lightning-input oncommit={updateFirstName} placeholder="First Name" ></lightning-input>
+								</span>
+							</div>
+							<div class="slds-col">
+								<span>
+									<lightning-input oncommit={updateLastName} placeholder="Last Name" ></lightning-input>
+								</span>
+							</div>
+						</div>
+					</span>
+				</div>
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+			</div>
+			<br/>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+				<div class="slds-col slds-size_10-of-12">
+					<span>
+						<lightning-input oncommit={updateTeamName} placeholder="Team Name" ></lightning-input>
+					</span>
+				</div>
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+			</div>
+			<br/>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+				<div class="slds-col slds-size_10-of-12">
+					<span>
+						<lightning-input oncommit={updateTeamDesc} placeholder="Team Description" ></lightning-input>
+					</span>
+				</div>
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+			</div>
+			<br/>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+				<div class="slds-col slds-size_10-of-12">
+					<span>
+						<lightning-input oncommit={updatePhone} placeholder="Contact Phone #" type="phone" ></lightning-input>
+					</span>
+				</div>
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+			</div>
+			<br/>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+				<div class="slds-col slds-size_10-of-12">
+					<span>
+						<lightning-input oncommit={updateEmail} placeholder="Email Address" type="email" message-when-pattern-mismatch="That doesn't look like a valid email."></lightning-input>
+					</span>
+				</div>
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+			</div>	
+			<br/><br/>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+				<div class="slds-col slds-size_10-of-12">
+					<span>
+						<button class="yellowButton" onclick={register}>REGISTER YOUR TEAM</button>
+					</span>
+				</div>
+				<div class="slds-col slds-size_1-of-12">
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template if:true={showSuccess}>
+		<br/><br/>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_2-of-12">
+				<span></span>
+			</div>
+			<div class="slds-col slds-size_3-of-12">
+				<span>
+					<img src="/s/VectorRegSuccess.png" alt="Success">
+				</span>
+			</div>
+			<div class="slds-col slds-size_6-of-12">
+				<span>
+					<h1 class="selfRegisterCardTitle">You did it!</h1>
+				</span>
+			</div>
+			<div class="slds-col slds-size_1-of-12">
+				<span></span>
+			</div>
+		</div>
+		<br/><br/><br/>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_3-of-12">
+				<span></span>
+			</div>
+			<div class="slds-col slds-size_8-of-12 selfRegisterMessage">
+				<span>
+					<p>Your registration is successful! 
+					Please check your email.</p>
+				</span>
+			</div>
+			<div class="slds-col slds-size_1-of-12">
+				<span></span>
+			</div>
+		</div>
+		<br/><br/><br/>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_3-of-12">
+				<span></span>
+			</div>
+			<div class="slds-col slds-size_8-of-12">
+				<span>
+					<button class="yellowButton" onclick={backToLogin}>Go to Login</button>
+				</span>
+			</div>
+			<div class="slds-col slds-size_1-of-12">
+				<span></span>
+			</div>
+		</div>
+	</template>
+	<template if:true={showFailure}>
+		<br/><br/>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_2-of-12">
+				<span></span>
+			</div>
+			<div class="slds-col slds-size_3-of-12">
+				<span>
+					<img src="/s/VectorRegFailure.png" alt="Success">
+				</span>
+			</div>
+			<div class="slds-col slds-size_6-of-12">
+				<span>
+					<h1 class="selfRegisterCardTitle">Oops!</h1>
+				</span>
+			</div>
+			<div class="slds-col slds-size_1-of-12">
+				<span></span>
+			</div>
+		</div>
+		<br/><br/><br/>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_3-of-12">
+				<span></span>
+			</div>
+			<div class="slds-col slds-size_8-of-12 selfRegisterMessage">
+				<span>
+					<p>Sorry, there is a glitch within the registration process!
+					Error: {result}
+					Please try again later.</p>
+				</span>
+			</div>
+			<div class="slds-col slds-size_1-of-12">
+				<span></span>
+			</div>
+		</div>
+		<br/><br/><br/>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_3-of-12">
+				<span></span>
+			</div>
+			<div class="slds-col slds-size_8-of-12">
+				<span>
+					<button class="yellowButton" onclick={backToRegister}>Register Again</button>
+				</span>
+			</div>
+			<div class="slds-col slds-size_1-of-12">
+				<span></span>
+			</div>
+		</div>
+	</template>
+</template>

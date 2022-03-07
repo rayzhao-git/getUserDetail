@@ -1,0 +1,23 @@
+.team-name-label{ grid-area: tnl;}
+.team-name-value{ grid-area: tnv;}
+.team-desc-label{ grid-area: tdl;}
+.team-desc-value{ grid-area: tdv;}
+.team-stat-label{ grid-area: tsl;}
+.team-stat-value{ grid-area: tsv;}
+.team-appd-label{ grid-area: tal;}
+.team-appd-value{ grid-area: tav;}
+
+.team-grid-container {
+    display: grid;
+    grid-template-areas: 
+        'tnl tnl tnv tnv tnv tnv'
+        'tdl tdl tdv tdv tdv tdv'
+        'tsl tsl tsv tsv tsv tsv'
+        'tal tal tav tav tav tav';
+    grid-gap: 10px;
+    padding: 4px;
+}
+
+.grid-container > div {
+    text-align: left;
+}
